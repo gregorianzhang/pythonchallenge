@@ -9,7 +9,7 @@ num = data.find('<!--')
 data1 = data[num:]
 
 #dd=re.compile(r'[A-Z]{3}([a-z])[A-Z]{3}')
-dd=re.compile(r'.+[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z].+')
+dd=re.compile(r'[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]')
 tt=""
 #print data1
 for x in data1.split('\n'):
