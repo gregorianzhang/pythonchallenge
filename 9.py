@@ -1,6 +1,6 @@
 import urllib2
 import base64
-#import Image
+import Image
 
 auth="huge:file"
 password=base64.b64encode(auth)
@@ -39,10 +39,16 @@ firstlist = [[first1[n],first1[n+1]] for n in xrange(0,len(first1),2)]
 secondlist = [[second1[n],second1[n+1]] for n in xrange(0,len(second1),2)]
 #print firstlist
 
+
+im = Image.new("RGB", (512, 512), "white")
 for v in firstlist:
-    print v[0],v[1]
-#    print "-"*50
+    #print v[0],v[1]
+    im.putpixel((int(v[0]),int(v[1])), (0,0,0))
 
 for v in secondlist:
-    print v[0],v[1]
+    im.putpixel((int(v[0]),int(v[1])), (255,0,0))
+
+im.save('bbb.png')
+
+
 
